@@ -9,5 +9,7 @@ class Group:
         return "%s:%s" % (self.gid, self.name)
 
     def __eq__(self, other):
-        return self.gid == other.gid and self.name == other.name
+        return (int(self.gid) == 1000 or self.gid == other.gid) and self.name == other.name
 
+    def get_name(self):
+        return self.name
