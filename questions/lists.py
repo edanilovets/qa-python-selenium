@@ -10,14 +10,21 @@ groups.append(group_1)
 groups.append(group_2)
 groups.append(group_3)
 groups.append(group_1)
-groups.insert(2, group_4)
+groups.append(group_4)
 
-print(groups)
+# print(groups)
 # groups[0:1] = []
 # groups.pop(2)
 # print(groups.count(group_1))
-groups.sort(key=lambda x: x.gid, reverse=True)
-print(groups)
+# groups.sort(key=lambda x: x.gid, reverse=True)
+# print(groups)
+#
+# squares = [x**2 for x in range(10)]
+# print(squares)
 
-squares = [x**2 for x in range(10)]
-print(squares)
+# Questions
+# How to select an element from list?
+print(groups)
+print("Index 1: %s" % groups[1])
+print("" % groups[-1])
+#
