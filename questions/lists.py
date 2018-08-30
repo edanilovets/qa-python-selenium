@@ -26,5 +26,4 @@ groups.append(group_4)
 # How to select an element from list?
 print(groups)
 print("Index 1: %s" % groups[1])
-print("" % groups[-1])
-#
+print("Last: %s" % groups[-1])
