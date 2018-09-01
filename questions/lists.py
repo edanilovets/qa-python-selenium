@@ -28,5 +28,12 @@ print(size)
 print(color)
 print(noise)
 
+# Reverse lists
+tab = [1, 2, 3]
+
+tab = list(reversed(tab))
+tab.reverse()
+tab = tab[::-1]
+
 # Questions
 # How to select an element from list?
