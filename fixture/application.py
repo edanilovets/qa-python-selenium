@@ -16,7 +16,7 @@ class Application:
         elif browser == "edge":
             self.wd = webdriver.Edge()
 
-        self.wd.implicitly_wait(10)
+        self.wd.implicitly_wait(1)
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
