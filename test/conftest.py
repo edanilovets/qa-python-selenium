@@ -1,13 +1,20 @@
 import pytest
+import json
 from fixture.application import Application
+
+target = None
 
 
 @pytest.fixture(scope="session", autouse=True)
 def app(request):
     browser = request.config.getoption("--browser")
-    base_url = request.config.getoption("--url")
-    fixture = Application(browser=browser, url=base_url)
-    fixture.session.login(username="admin", password="secret")
+    global target
+    if target is None:
+        with open(request.config.getoption("--target")) as config_file:
+            target = json.load(config_file)
+
+    fixture = Application(browser=browser, url=target["baseUrl"])
+    fixture.session.login(username=target["username"], password=target["password"])
 
     def fin():
         fixture.session.logout()
@@ -19,4 +26,4 @@ def app(request):
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome")
-    parser.addoption("--url", action="store", default="http://localhost:8080/addressbook/")
+    parser.addoption("--target", action="store", default="target.json")
