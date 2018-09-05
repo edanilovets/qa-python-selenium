@@ -40,6 +40,6 @@ def test_add_group(app, group):
     old_groups.append(group)
     old_groups.sort(key=lambda x: int(x.gid), reverse=True)
     new_groups.sort(key=lambda x: int(x.gid), reverse=True)
-    print(old_groups)
-    print(new_groups)
+    # print(old_groups)
+    # print(new_groups)
     assert old_groups == new_groups
