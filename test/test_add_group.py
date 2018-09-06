@@ -3,7 +3,7 @@ Application address book
 Tests for adding groups
 """
 import pytest
-from data.add_group import constant_data as test_data
+from data.data_groups import constant_data as test_data
 # from data.add_group import generated_data_1 as test_data
 # from data.add_group import generated_data_2 as test_data
 
